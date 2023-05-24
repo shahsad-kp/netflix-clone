@@ -1,25 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import Head from "./Components/Head/Head";
+import RowPosts from "./Components/RowPosts/RowPosts";
+import {
+    actionsEndpoint,
+    netflixOriginalsEndpoint,
+    horrorEndpoint,
+    romanceEndpoint,
+    comedyEndpoint,
+    documentariesEndpoint
+} from "./constants/apiEndPoints";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Head/>
+            <RowPosts title={'Netflix Originals'} endpoint={netflixOriginalsEndpoint} bigPoster={true}/>
+            <RowPosts title={'Actions'} endpoint={actionsEndpoint}/>
+            <RowPosts title={'Horror'} endpoint={horrorEndpoint} />
+            <RowPosts title={'Romance'} endpoint={romanceEndpoint} />
+            <RowPosts title={'Comedy'} endpoint={comedyEndpoint} />
+            <RowPosts title={'Documentaries'} endpoint={documentariesEndpoint} />
+        </div>
+    );
 }
 
 export default App;
