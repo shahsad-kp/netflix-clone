@@ -12,7 +12,7 @@ function RowPosts({title, endpoint, bigPoster}) {
         axios.get(endpoint).then((r) => {
             setMovies(r.data.results)
         })
-    })
+    }, [])
 
     function selectMovie(movieId) {
         if (selectedYoutubeId && selectedYoutubeId.movieId === movieId) {
